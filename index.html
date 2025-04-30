@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-    <title>ExemploJavaScript</title>
+    <meta charset="UTF-8">
+    <title>Troco Simples</title>
 </head>
-
 <body>
-    <h1 id="titulo">Hello World!!!</h1>
-    <input id="campoTexto" type="text">
-    <button id="btTrocarTexto">Trocar Texto</button>
-</body>
+    <h2>Calculadora de Troco</h2>
+
+    <p>Valor pago:</p>
+    <input id="valorPago" type="number"><br><br>
+
+    <p>Preço do produto:</p>
+    <input id="precoProduto" type="number"><br><br>
+
+    <button onclick="mostrarTroco()">Calcular Troco</button>
+
+    <p id="mensagem"></p>
+
     <script src="script.js"></script>
+</body>
 </html>

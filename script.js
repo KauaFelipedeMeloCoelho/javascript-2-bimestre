@@ -1,18 +1,21 @@
-let titulo = document.querySelector("#titulo");
-let campoTexto = document.querySelector("#campoTexto");
-let btTrocarTexto = document.querySelector("#btTrocarTexto");
+function mostrarTroco() {
+    // Pega os valores digitados
+    var valorPago = document.getElementById("valorPago").value;
+    var precoProduto = document.getElementById("precoProduto").value;
 
-function alterarTexto() {
-    //Retirando o valor digitado no input
-    //e jogando na variável
-    let textoDigitado = campoTexto.value;
+    // Converte os valores para número
+    var pago = Number(valorPago);
+    var preco = Number(precoProduto);
 
-    //Atribuindo ao elemento título o texto que foi digitado
-    //no input
-    titulo.textContent = textoDigitado;
-}
+    // Calcula o troco
+    var troco = pago - preco;
 
-//Atribuindo uma ação de clicar no botão
-btTrocarTexto.onclick = function () {
-    alterarTexto();
+    // Mostra a mensagem
+    var mensagem = document.getElementById("mensagem");
+
+    if (troco < 0) {
+        mensagem.innerText = "Você ainda deve R$ " + Math.abs(troco);
+    } else {
+        mensagem.innerText = "O troco é R$ " + troco;
+    }
 }
